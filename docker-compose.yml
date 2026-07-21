@@ -1,0 +1,22 @@
+services:
+  acv-project:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: acv-project
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DISPLAY=192.168.0.6:0
+    stdin_open: true
+    tty: true
+    ipc: host
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
