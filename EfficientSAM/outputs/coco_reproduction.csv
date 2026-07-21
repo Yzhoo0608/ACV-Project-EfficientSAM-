@@ -1,0 +1,3 @@
+Model,Evaluated Instances,Box mIoU,1-click mIoU,3-click mIoU,Latency(ms),FPS
+EfficientSAM-Ti,36325,75.51,45.17,67.06,173.73,5.76
+EfficientSAM-S,36325,76.92,53.11,69.17,369.6,2.71
