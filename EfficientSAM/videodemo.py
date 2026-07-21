@@ -12,11 +12,11 @@ from efficient_sam.build_efficient_sam import (
 # Configuration
 VIDEO_PATH = (
     "/workspace/EfficientSAM/"
-    "videos/testvideo.mp4"
+    "videos/test.mp4"
 )
 OUTPUT_VIDEO_PATH = (
     "/workspace/EfficientSAM/"
-    "videos/demotestvideo.mp4"
+    "videos/demo1.mp4"
 )
 MODEL_PATH = (
     "/workspace/EfficientSAM/weights/"
