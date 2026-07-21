@@ -1,5 +1,4 @@
 # prompt_utils.py
-
 import numpy as np
 import torch
 import cv2
