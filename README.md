@@ -47,7 +47,7 @@ ACV_Project
 └── EfficientSAM
     │
     ├── efficient_sam/
-    │   └── EfficientSAM source code
+    │  
     │
     ├── weights/
     │   ├── efficient_sam_vits.pt.zip
