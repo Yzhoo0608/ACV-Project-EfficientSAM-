@@ -1,7 +1,5 @@
-
 # metrics.py
 import numpy as np
-
 
 # IoU
 # Calculate overlap between GT and prediction
