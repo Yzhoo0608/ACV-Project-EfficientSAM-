@@ -1,1 +1,3 @@
 EfficientSAM/datasets/coco/
+EfficientSAM/torchscripted_model/
+*.onnx
