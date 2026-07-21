@@ -30,7 +30,6 @@ MIN_MASK_AREA = 50
 
 
 # Device
-
 DEVICE = torch.device(
     "cuda" if torch.cuda.is_available() else "cpu"
 )
@@ -305,7 +304,7 @@ def calculate_mask_box(mask, frame):
         
     return (x1, y1, x2, y2)
 # -------------------------------------------------
-# # Mask overlap
+# Mask overlap
 # -------------------------------------------------
 def overlay_mask(frame, mask, color=(0, 255, 0)):
     result = frame.copy()
@@ -320,7 +319,7 @@ def overlay_mask(frame, mask, color=(0, 255, 0)):
     ).astype(np.uint8)
     return result
 # -------------------------------------------------
-# # Detect tracking point
+# Detect tracking point
 # -------------------------------------------------
 def detect_tracking_points(frame, mask):
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -329,7 +328,7 @@ def detect_tracking_points(frame, mask):
     return points
 
 # -------------------------------------------------
-# # Initialize object tracking
+# Initialize object tracking
 # -------------------------------------------------
 def initialize_tracking(frame, state):
     state["tracking_points"] = detect_tracking_points(frame, state["mask"])
@@ -339,7 +338,7 @@ def initialize_tracking(frame, state):
     else:
         state["tracking_active"] = True
 # -------------------------------------------------
-# # Filters point using segmentation mask
+# Filters point using segmentation mask
 # -------------------------------------------------
 def filter_points_by_mask(points, mask):
     if points is None:
@@ -357,7 +356,7 @@ def filter_points_by_mask(points, mask):
     return np.array(valid_points, dtype=np.float32)
 
 # -------------------------------------------------
-# # Calculate tracking prompt
+# Calculate tracking prompt
 # -------------------------------------------------
 def calculate_tracking_prompt(points, mask):
     if points is None or mask is None:
@@ -391,9 +390,9 @@ def find_mask_prompt(mask):
     distance_map = cv2.distanceTransform(mask_uint8, cv2.DIST_L2, 5)
     _, _, _, max_location = cv2.minMaxLoc(distance_map)
     return max_location
-# ==========================================================
+# -------------------------------------------------
 # Update multi-point optical flow tracking
-# ==========================================================
+# -------------------------------------------------
 def update_tracking(frame, state):
     if not state["tracking_active"] or state["tracking_points"] is None:
         return
